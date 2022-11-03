@@ -208,7 +208,7 @@ reward:
 # Easily browse and edit blog source code online.
 post_edit:
   enable: true
-  url: https://github.com/stophemo/stophemo.github.io/HexoPage/edit/master/source/
+  url: https://github.com/stophemo/HexoPage/edit/master/source/
   # For example: https://github.com/jerryc127/butterfly.js.org/edit/main/source/
 
 # Related Articles
