@@ -424,7 +424,7 @@ messenger:
 footer:
   owner:
     enable: true
-    since: 2020
+    since: 2022
   custom_text:
   copyright: true # Copyright of theme and framework
 
@@ -543,15 +543,15 @@ canvas_ribbon:
 
 # Fluttering Ribbon (动态彩带)
 canvas_fluttering_ribbon:
-  enable: false
+  enable: true
   mobile: false
 
 # canvas_nest
 # https://github.com/hustcc/canvas-nest.js
 canvas_nest:
-  enable: false
+  enable: true
   color: '0,0,255' #color of lines, default: '0,0,0'; RGB values: (R,G,B).(note: use ',' to separate.)
-  opacity: 0.7 # the opacity of line (0~1), default: 0.5.
+  opacity: 0.1 # the opacity of line (0~1), default: 0.5.
   zIndex: -1 # z-index property of the background, default: -1.
   count: 99 # the number of lines, default: 99.
   mobile: false
@@ -559,7 +559,7 @@ canvas_nest:
 # Typewriter Effect (打字效果)
 # https://github.com/disjukr/activate-power-mode
 activate_power_mode:
-  enable: false
+  enable: true
   colorful: true # open particle animation (冒光特效)
   shake: true #  open shake (抖动特效)
   mobile: false
@@ -641,8 +641,14 @@ subtitle:
     - 何其荣幸 何德何能
     - 所有的不平凡都来自平凡
 # Loading Animation (加载动画)
-preloader: false
-
+preloader: 
+  # enable: true
+  # source
+  # 1. fullpage-loading
+  # 2. pace (progress bar)
+  # source: 1
+  # pace theme (see https://codebyzach.github.io/pace/)
+  # pace_css_url: /css/fill-left.css
 # aside (侧边栏)
 # --------------------------------------
 
