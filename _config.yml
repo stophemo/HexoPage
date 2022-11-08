@@ -2,6 +2,10 @@
 ## Docs: https://hexo.io/docs/configuration.html
 ## Source: https://github.com/hexojs/hexo/
 
+aplayer:
+  meting: true
+  asset_inject: false
+
 # Site
 title: StopHemo
 subtitle: '不是山谷，不必有所回应'
