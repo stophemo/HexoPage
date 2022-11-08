@@ -6,6 +6,38 @@ aplayer:
   meting: true
   asset_inject: false
 
+douban:
+  user: 264293398
+  builtin: true
+  book:
+    title: 'This is my book title'
+    quote: 'This is my book quote'
+    meta: true
+    comments: true
+    top_img: https://cccccc.png
+    aside: true
+    path: book
+    limit:
+  movie:
+    title: 'This is my movie title'
+    quote: 'This is my movie quote'
+    meta: true
+    comments: true
+    top_img: https://cccccc.png
+    aside: true
+    path: movie
+    limit:
+  game:
+    title: 'This is my game title'
+    quote: 'This is my game quote'
+    meta: true
+    comments: true
+    top_img: https://cccccc.png
+    aside: true
+    path: game
+    limit:
+  timeout: 10000   
+
 # Site
 title: StopHemo
 subtitle: '不是山谷，不必有所回应'

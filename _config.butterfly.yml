@@ -6,12 +6,13 @@ menu:
   Home: / || fa fa-home
   Tags: /tags/ || fa fa-tags
   Categories: /categories/ || fa fa-folder-open
-  Game: /game/ || fa fa-gamepad
   Develop: /code/ || fa fa-code
-  List||fas fa-list||hide:
-    Music: /music/ || fas fa-music
-    Movie: /movie/ || fas fa-video
-    Gallery: /gallery/ || fa fa-images
+  Gallery: /gallery/ || fa fa-images
+  Music: /music/ || fas fa-music
+  Movie: /movie/ || fas fa-video
+  Book: /book/ || fas fa-book
+  Game: /game/ || fa fa-gamepad
+  
 
 
 # Code Blocks (代码相关)
@@ -672,7 +673,7 @@ aside:
       link: https://github.com/stophemo
   card_announcement:
     enable: true
-    content: This is my Blog
+    content: Wellcome!!!
   card_recent_post:
     enable: true
     limit: 5 # if set 0 will show all
@@ -711,8 +712,8 @@ busuanzi:
 # Time difference between publish date and now (网页运行时间)
 # Formal: Month/Day/Year Time or Year/Month/Day Time
 runtimeshow:
-  enable: false
-  publish_date:
+  enable: true
+  publish_date: 2022/11/09 11:05:15
 
 # Aside widget - Newest Comments
 newest_comments:
