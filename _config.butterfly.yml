@@ -426,7 +426,8 @@ footer:
   owner:
     enable: true
     since: 2022
-  custom_text:
+  custom_text: <img src="/img/icp.png" style="display:inline-block; width:15px; height:15px; transform:translateY(2px);" />
+               <a href="https://beian.miit.gov.cn/#/Integrated/index"  style="color:white" target="_blank">蜀ICP备2022028040号</a>
   copyright: true # Copyright of theme and framework
 
 # Analysis
