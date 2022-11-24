@@ -644,13 +644,13 @@ subtitle:
     - 所有的不平凡都来自平凡
 # Loading Animation (加载动画)
 preloader: 
-  # enable: true
+  enable: true
   # source
   # 1. fullpage-loading
   # 2. pace (progress bar)
-  # source: 1
+  source: 1
   # pace theme (see https://codebyzach.github.io/pace/)
-  # pace_css_url: /css/fill-left.css
+  # pace_css_url: /css/bounce.css
 # aside (侧边栏)
 # --------------------------------------
 
