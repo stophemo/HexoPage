@@ -6,59 +6,59 @@ aplayer:
   meting: true
   asset_inject: false
 
-pjax:
-  enable: true
-  exclude:
-    - /movies/
-    - /books/
-    - /games/
+# pjax:
+#   enable: true
+#   exclude:
+#     - /movies/
+#     - /books/
+#     - /games/
 
-douban:
-  id: 162448367
-  book:
-    path: books/index.html
-    title: 'This is my book title'
-    quote: 'This is my book quote'
-  movie:
-    path: movies/index.html
-    title: 'This is my movie title'
-    quote: 'This is my movie quote'
-  game:
-    path: games/index.html
-    title: 'This is my game title'
-    quote: 'This is my game quote'
-  timeout: 10000 
 # douban:
-#   user: 264293398
-#   builtin: true
+#   id: 162448367
 #   book:
+#     path: books/index.html
 #     title: 'This is my book title'
 #     quote: 'This is my book quote'
-#     meta: true
-#     comments: true
-#     top_img: /img/background.png
-#     aside: true
-#     path: book
-#     limit:
 #   movie:
+#     path: movies/index.html
 #     title: 'This is my movie title'
 #     quote: 'This is my movie quote'
-#     meta: true
-#     comments: true
-#     top_img: /img/background.png
-#     aside: true
-#     path: movie
-#     limit:
 #   game:
+#     path: games/index.html
 #     title: 'This is my game title'
 #     quote: 'This is my game quote'
-#     meta: true
-#     comments: true
-#     top_img: /img/background.png
-#     aside: true
-#     path: game
-#     limit:
-#   timeout: 10000   
+#   timeout: 10000 
+douban:
+  user: 264293398
+  builtin: true
+  book:
+    title: 'This is my book title'
+    quote: 'This is my book quote'
+    meta: true
+    comments: true
+    top_img: /img/background.png
+    aside: true
+    path: books
+    limit:
+  movie:
+    title: 'This is my movie title'
+    quote: 'This is my movie quote'
+    meta: true
+    comments: true
+    top_img: /img/background.png
+    aside: true
+    path: movies
+    limit:
+  game:
+    title: 'This is my game title'
+    quote: 'This is my game quote'
+    meta: true
+    comments: true
+    top_img: /img/background.png
+    aside: true
+    path: games
+    limit:
+  timeout: 10000   
 
 # Site
 title: StopHemo
