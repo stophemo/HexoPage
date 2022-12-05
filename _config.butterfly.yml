@@ -9,9 +9,9 @@ menu:
   Develop: /code/ || fa fa-code
   Gallery: /gallery/ || fa fa-images
   Music: /music/ || fas fa-music
-  Movie: /movie/ || fas fa-video
-  Book: /book/ || fas fa-book
-  Game: /game/ || fa fa-gamepad
+  Movie: /movies/ || fas fa-video
+  Book: /books/ || fas fa-book
+  Game: /games/ || fa fa-gamepad
   
 
 
