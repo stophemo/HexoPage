@@ -1,5 +1,7 @@
+.gitignore
 .idea/
 *.iml
 public
-node_modules/
+node_modules
 .deploy_git
+db.json
