@@ -342,9 +342,9 @@ facebook_comments:
 # Twikoo
 # https://github.com/imaegoo/twikoo
 twikoo:
-  envId:
+  envId: http://43.139.35.96:8080/
   region:
-  visitor: false
+  visitor: true
   option:
 
 # Giscus

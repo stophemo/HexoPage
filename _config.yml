@@ -63,7 +63,7 @@ douban:
 
 # Site
 title: StopHemo
-subtitle: '不是山谷，不必有所回应'
+subtitle: '凡是过往 皆为序章'
 description: ''
 keywords:
 author: StopHemo
@@ -164,5 +164,5 @@ deploy:
   type: git
   repository:
     github: git@github.com:stophemo/stophemo.github.io.git
-    gitee: https://gitee.com/stophemo/stophemo.git
+    # gitee: https://gitee.com/stophemo/stophemo.git
   branch: master
