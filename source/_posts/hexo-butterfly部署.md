@@ -9,7 +9,7 @@ sticky: 99
 categories:     
 keywords: 
 description:
-top_img: /img/background.png
+top_img: /img/index.jpg
 comments:
 cover: 
 toc:
