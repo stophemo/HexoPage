@@ -85,7 +85,7 @@ nginx.exe
 
 **系统变量——> 环境配置——>新建系统变量 NGINX_HOME**
 
-![image-20221213101126816](img/ECS.assets/image-20221213101126816.png)
+![image-20221213101126816](./././img/ECS.assets/image-20221213101126816.png)
 
 然后将 `%NGINX_HOME%` 添加到系统变量PATH
 
@@ -111,11 +111,11 @@ $ npm install hexo-deployer-git --save
 
 ### 三、nginx配置部署
 
-![image-20221213102310395](img/ECS.assets/image-20221213102310395.png)
+![image-20221213102310395](./././img/ECS.assets/image-20221213102310395.png)
 
 1。项目文件放于html文件夹下
 
-![image-20221213102629342](img/ECS.assets/image-20221213102629342.png)
+![image-20221213102629342](./././img/ECS.assets/image-20221213102629342.png)
 
 2。修改配置文件
 
@@ -250,7 +250,7 @@ http {
 
 我这里是将ssl证书放在nginx/conf文件夹下
 
-![image-20221213104050711](img/ECS.assets/image-20221213104050711.png)
+![image-20221213104050711](./././img/ECS.assets/image-20221213104050711.png)
 
 80端口的server
 
@@ -294,7 +294,7 @@ nginx -s reload
 
 浏览器访问域名地址，测试通过
 
-![image-20221213104602006](img/ECS.assets/image-20221213104602006.png)
+![image-20221213104602006](./././img/ECS.assets/image-20221213104602006.png)
 
 ### hexo-butterfly部署（linux）
 
