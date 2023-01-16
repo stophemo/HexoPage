@@ -6,13 +6,13 @@ tags:
     - 域名 
     - 备案 
     - ssl
-sticky: 
+sticky: 3
 categories:     
 keywords: 
 description:
 top_img: /img/index.jpg
 comments:
-cover: 
+cover: /img/icp_beian.png
 toc:
 toc_number:
 toc_style_simple:
@@ -38,11 +38,11 @@ aside:
 
 进入域名控制台
 
-![image-20221213105756368](./././img/ECS.assets/image-20221213105756368.png)
+![image-20221213105756368](../../../../img/ECS.assets/image-20221213105756368.png)
 
 选择域名，点击解析，参考下图添加记录
 
-![image-20221213110004048](./././img/ECS.assets/image-20221213110004048.png)
+![image-20221213110004048](../../../../img/ECS.assets/image-20221213110004048.png)
 
 至此，在浏览器访问域名时，就会通过dns解析，访问到记录值所对应的服务器
 
@@ -68,7 +68,7 @@ aside:
 
 进入ssl证书控制台
 
-![image-20221213110831394](./././img/ECS.assets/image-20221213110831394.png)
+![image-20221213110831394](../../../../img/ECS.assets/image-20221213110831394.png)
 
 点击创建证书->证书申请->根据提示进行操作（需要在域名解析处添加记录）。。。。。。
 
@@ -76,6 +76,6 @@ aside:
 
 签发完成后，点击下载，即可获得证书文件
 
-![image-20221213111153558](./././img/ECS.assets/image-20221213111153558.png)
+![image-20221213111153558](../../../../img/ECS.assets/image-20221213111153558.png)
 
 
