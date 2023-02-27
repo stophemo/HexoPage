@@ -29,37 +29,37 @@ aplayer:
 #     quote: 'This is my game quote'
 #   timeout: 10000 
 
-douban:
-  user: 264293398
-  builtin: true
-  book:
-    title: ' '
-    quote: 'Here are some books that I think are interesting'
-    meta: true
-    comments: true
-    top_img: /img/index.jpg
-    aside: true
-    path: books
-    limit:
-  movie:
-    title: ' '
-    quote: 'Here are some movies that I think are interesting'
-    meta: true
-    comments: true
-    top_img: /img/index.jpg
-    aside: true
-    path: movies
-    limit:
-  game:
-    title: ' '
-    quote: 'Here are some games that I think are interesting'
-    meta: true
-    comments: true
-    top_img: /img/index.jpg
-    aside: true
-    path: games
-    limit:
-  timeout: 10000   
+# douban:
+#   user: 264293398
+#   builtin: true
+#   book:
+#     title: ' '
+#     quote: 'Here are some books that I think are interesting'
+#     meta: true
+#     comments: true
+#     top_img: /img/index.jpg
+#     aside: true
+#     path: books
+#     limit:
+#   movie:
+#     title: ' '
+#     quote: 'Here are some movies that I think are interesting'
+#     meta: true
+#     comments: true
+#     top_img: /img/index.jpg
+#     aside: true
+#     path: movies
+#     limit:
+#   game:
+#     title: ' '
+#     quote: 'Here are some games that I think are interesting'
+#     meta: true
+#     comments: true
+#     top_img: /img/index.jpg
+#     aside: true
+#     path: games
+#     limit:
+#   timeout: 1000   
 
 # Site
 title: StopHemo

@@ -3,15 +3,16 @@
 # --------------------------------------
 
 menu:
-  Home: / || fa fa-home
-  Tags: /tags/ || fa fa-tags
-  Categories: /categories/ || fa fa-folder-open
-  Develop: /code/ || fa fa-code
-  Gallery: /gallery/ || fa fa-images
-  Music: /music/ || fas fa-music
-  Movie: /movies/ || fas fa-video
-  Book: /books/ || fas fa-book
-  Game: /games/ || fa fa-gamepad
+  首页: / || fa fa-home
+  标签: /tags/ || fa fa-tags
+  开发者: /code/ || fa fa-code
+  我的豆瓣||fas fa-list||hide:
+    画廊: /gallery/ || fa fa-images
+    音乐: /music/ || fas fa-music
+    电影: /movies/ || fas fa-video
+    书: /books/ || fas fa-book
+    游戏: /games/ || fa fa-gamepad
+  ChatGPT: /chatgpt/ || fa-regular fa-comment-dots 
   
 
 

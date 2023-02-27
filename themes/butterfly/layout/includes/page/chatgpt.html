@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+
+<body>
+    <div id="app">
+        <div id="chat-container">
+            <div class="welcome-text">
+                你好，我是 ChatGPT，一个由 OpenAI 训练的大型语言模型，我能够用多种语言与人交流，比如回答任何问题和解决各种问题。
+            </div>
+            <div class="couple-chat">
+                <div class="user-question"></div>
+                <div class="chatgpt-answer"></div>
+            </div>
+        </div>
+        <div class="send-panel">
+            <input id="send-text" type="text">
+            <button id="send-button">发送</button>
+        </div>
+    </div>
+
+    <script>
+        const btn = document.getElementById("send-button");
+        let chatContainer = document.getElementById("chat-container");
+        let coupleChatClone = document.getElementsByClassName("couple-chat")[0].cloneNode(true);
+        let n = 0;
+        btn.onclick = function () {
+            let question = document.getElementById("send-text").value;
+            if (n > 0) {
+                chatContainer.appendChild(coupleChatClone);
+            }
+            let questionBox = document.getElementsByClassName("user-question")[n];
+            let answerBox = document.getElementsByClassName("chatgpt-answer")[n];
+            questionBox.innerHTML = question;
+            const xhr = new XMLHttpRequest();
+            xhr.responseType = 'json';
+            xhr.open('GET', 'https://wjs4wgh3tn.hk.aircode.run/hello?q=' + question);
+            xhr.send();
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4) {
+                    if (xhr.status >= 200 && xhr.status < 300) {
+
+                        answerBox.innerHTML = xhr.response.answer;
+                    } else {
+                        answerBox.innerHTML = '网络可能出了问题，我暂时不能回答问题';
+                    }
+                    n = n + 1;
+                }
+            }
+        }
+        let input = document.getElementById("send-text");
+        //回车事件绑定
+        input.addEventListener('keyup', function (e) {
+            if (e.keyCode == "13") {
+                //回车执行查询
+                btn.click();
+            }
+        });
+    </script>
+</body>
+
+</html>
