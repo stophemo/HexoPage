@@ -4,37 +4,174 @@
 <head>
     <meta charset="utf-8">
     <title></title>
+    <style>
+        #chat-container {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            padding: 5px 10px;
+            background-color: #eee;
+            box-sizing: border-box;
+            padding: 1em;
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .chat-panel {}
+
+        .send-panel {
+            background: #ccc;
+            border-radius: 12px;
+            padding: 0 1em;
+            height: 55px;
+            margin: .5em 0 0;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        #send-text {
+            resize: none;
+            outline: none;
+            background: transparent;
+            border: none;
+            width: 100%;
+            height: 100%;
+            outline: none;
+            position: relative;
+            color: rgb(34, 33, 33);
+            font-size: 13px;
+            font-family: Lato, sans-serif;
+        }
+
+        .send-button {
+            background: purple;
+            height: 50px;
+            width: 60px;
+            border-radius: 50%;
+            transition: .3s ease;
+            background: grey;
+            height: 20px;
+            width: 30px;
+            border: 0;
+            padding: 0;
+            outline: none;
+            cursor: pointer;
+        }
+
+        #chat-panel {
+            padding: 1em 1em 2em;
+            height: calc(100vh - 105px - 5.5em);
+            overflow: auto;
+        }
+
+        .chatgpt-answer,
+        .chatgpt-welcome-box {
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 1.5em;
+        }
+
+        .user-question {
+            display: block;
+            position: relative;
+            display: flex;
+            flex-direction: row-reverse;
+            margin-bottom: 1.5em;
+        }
+
+        #chat-panel div:first-child>.user-question {
+            display: none !important;
+        }
+
+        .chatgpt-icon {
+            width: 70px;
+            height: 52px;
+            text-align: center;
+            padding: 0 18px 0 0;
+        }
+
+        .user-icon {
+            width: 70px;
+            height: 52px;
+            text-align: center;
+            padding: 0 0 0 18px;
+        }
+
+        .chatgpt-icon>img,
+        .user-icon>img {
+            line-height: 52px;
+            height: 80%;
+            width: auto;
+        }
+
+        .chatgpt-responseBox,
+        #chatgpt-welcome-text {
+            max-width: 70%;
+            border-radius: 12px;
+            padding: 0.5em .8em;
+            background-color: #ccc;
+        }
+
+        .chatgpt-requestBox {
+            max-width: 70%;
+            border-radius: 12px;
+            padding: 0.5em .8em;
+            background-color: #ccc;
+        }
+    </style>
 </head>
 
 <body>
     <div id="app">
         <div id="chat-container">
-            <div class="welcome-text">
-                你好，我是 ChatGPT，一个由 OpenAI 训练的大型语言模型，我能够用多种语言与人交流，比如回答任何问题和解决各种问题。
+            <div id="chat-panel" class="chat-panel">
+                <div class="chatgpt-welcome-box">
+                    <div class="chatgpt-icon">
+                        <img src="https://cos.wozaizhao.com/chatgpt.png" alt="chatGPT">
+                    </div>
+                    <div id="chatgpt-welcome-text"> 我是 ChatGPT，一个受 OpenAI 训练的大型语言模型，我可以解答并帮助解决人们的问题，并且可以用多种语言与人交流。</div>
+                </div>
+                <div class="couple-chat">
+                    <div class="user-question">
+                        <div class="user-icon">
+                            <img src="https://cos.wozaizhao.com/chatgpt.png" alt="chatGPT">
+                        </div>
+                        <div class="chatgpt-requestBox"></div>
+                    </div>
+                    <div class="chatgpt-answer">
+                        <div class="chatgpt-icon">
+                            <img src="https://cos.wozaizhao.com/chatgpt.png" alt="chatGPT">
+                        </div>
+                        <div class="chatgpt-responseBox"></div>
+                    </div>
+                </div>
             </div>
-            <div class="couple-chat">
-                <div class="user-question"></div>
-                <div class="chatgpt-answer"></div>
+            <div class="send-panel">
+                <input id="send-text" type="text" placeholder="请输入">
+                <button title="" id="send-button"><svg data-v-d18d878f="" xmlns="http://www.w3.org/2000/svg" width="24"
+                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-reactid="1036">
+                        <line data-v-d18d878f="" x1="22" y1="2" x2="11" y2="13"></line>
+                        <polygon data-v-d18d878f="" points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                    </svg></button>
             </div>
-        </div>
-        <div class="send-panel">
-            <input id="send-text" type="text">
-            <button id="send-button">发送</button>
         </div>
     </div>
 
     <script>
         const btn = document.getElementById("send-button");
-        let chatContainer = document.getElementById("chat-container");
+        let chatContainer = document.getElementById("chat-panel");
         let coupleChatClone = document.getElementsByClassName("couple-chat")[0].cloneNode(true);
         let n = 0;
-        btn.onclick = function () {
+        // 点击事件
+        let sendQuestion = function () {
+            chatContainer.appendChild(coupleChatClone);
+            let answerBox = document.getElementsByClassName("chatgpt-responseBox")[n];
             let question = document.getElementById("send-text").value;
-            if (n > 0) {
-                chatContainer.appendChild(coupleChatClone);
-            }
-            let questionBox = document.getElementsByClassName("user-question")[n];
-            let answerBox = document.getElementsByClassName("chatgpt-answer")[n];
+            let questionBox = document.getElementsByClassName("chatgpt-requestBox")[n];
             questionBox.innerHTML = question;
             const xhr = new XMLHttpRequest();
             xhr.responseType = 'json';
@@ -43,15 +180,27 @@
             xhr.onreadystatechange = function () {
                 if (xhr.readyState === 4) {
                     if (xhr.status >= 200 && xhr.status < 300) {
-
-                        answerBox.innerHTML = xhr.response.answer;
+                        answerBox.innerHTML  = xhr.response.answer;
                     } else {
-                        answerBox.innerHTML = '网络可能出了问题，我暂时不能回答问题';
+                        answerBox.innerHTML  = '网络可能出了问题，我暂时不能回答问题';
                     }
-                    n = n + 1;
+                }
+            }
+            n = n + 1;
+        }
+        // 节流
+        let throttle = function (delay) {
+            let prev = Date.now();
+            return function () {
+                let now = Date.now();
+                if (now - prev >= delay) {
+                    sendQuestion();
+                    prev = Date.now();
                 }
             }
         }
+        // 绑定点击事件
+        btn.onclick = throttle(1000);
         let input = document.getElementById("send-text");
         //回车事件绑定
         input.addEventListener('keyup', function (e) {
