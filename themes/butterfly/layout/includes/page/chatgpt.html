@@ -61,9 +61,10 @@
         }
 
         #chat-panel {
-            padding: 1em 1em 2em;
+            padding: 1em 1em 0;
             height: calc(100vh - 105px - 5.5em);
             overflow: auto;
+            scroll-behavior: smooth;
         }
 
         .chatgpt-answer,
@@ -87,6 +88,9 @@
         }
 
         .chatgpt-icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
             width: 70px;
             height: 52px;
             text-align: center;
@@ -94,6 +98,9 @@
         }
 
         .user-icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
             width: 70px;
             height: 52px;
             text-align: center;
@@ -163,16 +170,29 @@
 
     <script>
         const btn = document.getElementById("send-button");
+        const input = document.getElementById("send-text");
+        const coupleChatClone = document.getElementsByClassName("couple-chat")[0].cloneNode(true);
         let chatContainer = document.getElementById("chat-panel");
-        let coupleChatClone = document.getElementsByClassName("couple-chat")[0].cloneNode(true);
+        let firstChat = document.getElementsByClassName("couple-chat")[0];
+        firstChat.setAttribute("style", "visibility: hidden;");
         let n = 0;
         // 点击事件
         let sendQuestion = function () {
-            chatContainer.appendChild(coupleChatClone);
+            if (n == 0) {
+                firstChat.setAttribute("style", "visibility: visible;");
+            } else {
+                chatContainer.appendChild(coupleChatClone.cloneNode(true));
+            }
             let answerBox = document.getElementsByClassName("chatgpt-responseBox")[n];
-            let question = document.getElementById("send-text").value;
+            let question = input.value;
+            input.value = '';
             let questionBox = document.getElementsByClassName("chatgpt-requestBox")[n];
             questionBox.innerHTML = question;
+            if (chatContainer.scrollHeight > chatContainer.clientHeight) {
+                setTimeout(function () {
+                    chatContainer.scrollTop = chatContainer.scrollHeight;
+                }, 500)
+            }
             const xhr = new XMLHttpRequest();
             xhr.responseType = 'json';
             xhr.open('GET', 'https://wjs4wgh3tn.hk.aircode.run/hello?q=' + question);
@@ -180,14 +200,15 @@
             xhr.onreadystatechange = function () {
                 if (xhr.readyState === 4) {
                     if (xhr.status >= 200 && xhr.status < 300) {
-                        answerBox.innerHTML  = xhr.response.answer;
+                        answerBox.innerHTML = xhr.response.answer;
                     } else {
-                        answerBox.innerHTML  = '网络可能出了问题，我暂时不能回答问题';
+                        answerBox.innerHTML = '网络可能出了问题，我暂时不能回答问题';
                     }
                 }
             }
             n = n + 1;
         }
+
         // 节流
         let throttle = function (delay) {
             let prev = Date.now();
@@ -200,8 +221,8 @@
             }
         }
         // 绑定点击事件
-        btn.onclick = throttle(1000);
-        let input = document.getElementById("send-text");
+        btn.onclick = sendQuestion;
+
         //回车事件绑定
         input.addEventListener('keyup', function (e) {
             if (e.keyCode == "13") {
